@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Responsive Two-Cell Table</title>
+		<style>
+			/* Reset default margins and ensure full viewport coverage */
+			html, body {
+				margin: 0; /*eliminates gaps outside of the element*/
+				padding: 0; /*eliminates gaps inside of the element*/
+				height: 100vh; /*100% of the viewport height*/
+				width: 100vw; /*100% of the viewport width*/
+				overflow: hidden; /*prevents scrolling*/
+			}
+
+			/* Table styling for full-screen and responsiveness */
+			table {
+				width: 100vw; /* Full viewport width */
+				height: 100vh; /* Full viewport height */
+				border-collapse: collapse; /* Removes gaps between cells */
+				table-layout: fixed; /* Ensures equal column widths */
+			}
+
+			/* Responsive cell styling */
+			td {
+				padding: 2vw; /* Responsive padding using viewport units */
+				text-align: center; /* Centers text horizontally */
+				font-size: 2.5vw; /* Responsive font size thanks to 'vw'*/
+				font-family: Arial, sans-serif; /* Clean, readable font. Arial, if available, sans-serif if not*/
+				border: 2px solid blue;
+				box-sizing: border-box; /* Includes padding in cell size */
+			}
+
+			/* Media query for smaller screens */
+			@media screen and (max-width: 600px) { /* Adjusts styles for screens smaller than 600px */
+				td {
+					padding: 1vw;
+					font-size: 3vw; /* Slightly larger font for readability on small screens */
+				}
+			}
+
+			/* Cell-specific styling */
+			.cell1 {
+				background-color: yellow;
+				color: pink;
+			}
+			.cell2 {
+				background-color: pink;
+				color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td class="cell1">Right Yellow cell</td>
+				<td class="cell2">Left Pink cell</td>
+			</tr>
+		</table>
+	</body>
+</html>
