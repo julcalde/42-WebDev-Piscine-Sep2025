@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Two-Cell Tab</title>
+		<!--table:
+			set to be 99% of the screen width
+			set 20px distant from top and bottom margin, automatically centers table horizontally
+			makes different cells merge their borders, removing any gaps-->
+		<!--td: (table data)
+			20px of internat spacing aorund the content (text) of each cell
+			alignes the text in the center of the cells
+			sets the font inside table to 18px, specifies Arial if availbable and sans-serif in case not
+			applies solid border around cells 1px wide and to black-->
+		<style>
+			table {
+				width: 99%;
+				margin: 20px auto;
+				border-collapse: collapse;
+			}
+			td {
+				padding: 20px;
+				text-align: center;
+				font-size: 18px;
+				font-family: Arial, sans-serif;
+				border: 1px solid black;
+			}
+			.cell1 {
+				background-color: yellow;
+
+				color: pink;
+			}
+			.cell2 {
+				background-color: pink;
+				color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td class="cell1">Right Yellow cell</td>
+				<td class="cell2">Left Pink cell</td>
+			</tr>
+		</table>
+	</body>
+</html>
