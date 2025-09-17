@@ -1,9 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- Declaration for browser-->
+<html lang="en"> <!-- Root Element with language specification for accessibility purpose-->
+ <!--   Head section      -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> <!-- sets char encoding to UTF-8 to support wide range of chars-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- makes page responsive to properly scale on different devices, and sets initial zoom-distance to 1:1 respectively-->
     <title>Piscine Web</title>
+    <!--    CSS styling     -->
+        <!--h1:	
+				2.5 times the base font size
+            	centers the heading text-->
+		<!--.image-container:
+				Adds 20px margin above container
+				Sets 20px gap between fixed items
+				Centers the container horizontally by equal margins from left and right
+				Uses flexbox to arrange child elements (images) in a flexible layout
+				Centers the images horizontally withing the container-->
+		<!--.image-container img:
+				Sets the width to be 400px while maintaining aspect ratio
+				Rounds the corners of images for smoothness
+				Adds a margin of 20px around each image for spacing-->
     <style>
         h1 {
             font-size: 2.5em;
@@ -17,21 +32,19 @@
 			justify-content: center;
         }
         .image-container img {
-            max-width: 400px;
-            max-height: 600px;
-			width: auto;
+			width: 400px;
             height: auto;
-            min-width: 200px;
-            min-height: 600px;
             border-radius: 20px;
             margin: 20px;
         }
     </style>
 </head>
+ <!--   Body section        -->
+	<!-- Same as previous subject-->
 <body>
     <h1>Piscine Web</h1>
     <div class="image-container">
-        <a href="https://www.youtube.com/watch?v=INscMGmhmX4">
+        <a href="https://www.youtube.com/watch?v=INscMGmhmX4" target="_blank"> <!-- target="_blank" allows to open a link in a new tab-->
             <img src="../image1.jpeg" alt="Image1">
         </a>
         <img src="../image2.jpeg" alt="Image2">
