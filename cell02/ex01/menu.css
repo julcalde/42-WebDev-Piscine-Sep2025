@@ -1,0 +1,121 @@
+body {
+    margin: 0; /* Eliminates gaps outside of the element */
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Light grey background for the page*/
+    display: flex; /* Flexbox for centering the menu */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    height: 100vh; /* Full viewport height */
+}
+
+.sandwich-menu {
+    position: relative; /* For positioning dropdowns. relative means "relative to itself" */
+}
+
+.menu { /* Main menu styling */
+    list-style: none; /* Removes default list styling */
+    padding: 0; /* Removes default padding */
+    margin: 0;  /* Removes default margin */
+}
+
+.menu-item {
+    position: relative; /* For positioning dropdowns */
+    width: 400px; /* Fixed width for menu items */
+}
+
+.menu-link { /* Main menu link styling */
+    display: block; /* Makes the entire area clickable */
+    padding: 20px; /* Increased padding for better touch targets */
+    background-color: #003087; /* SNCF blue */
+    color: white; /* White text for contrast */
+    text-align: center; /* Centers text */
+	text-decoration: none; /* Removes underline from links */
+    font-size: 18px; /* Slightly larger font size */
+    font-weight: bold; /* Bold text for emphasis */
+    border-radius: 5px; /* Rounded corners */
+    /* rgba. alpha stands for transparency, 0 = invisible, 1 = opaque */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: background-color 0.1s; /* Smooth transition for hover effect */
+}
+
+.menu-link:hover {
+    background-color: #0055b3; /* Lighter blue on hover */
+}
+
+.dropdown { /* Dropdown menu styling */
+    list-style: none; /* Removes default list styling */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+    position: absolute; /* Positions dropdown relative to parent */
+    top: 101%; /* Places dropdown below the parent */
+    width: 100%; /* Full width of the parent */
+    background-color: #fff; /* White background for dropdown list*/
+    border: 1.5px solid #003087; /* Border matching main menu */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 8px darkgray;
+    display: none; /* Hidden by default */
+    z-index: 1; /* Ensures dropdown appears above other elements */
+}
+
+.menu-item:hover .dropdown { /* Shows dropdown on hover */
+    display: block; /* Displays the dropdown as a block element */
+}
+
+.dropdown-item { /* Dropdown item default styling */
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid #ddd; /* solid stands for continuous line */
+    transition: background-color 0.3s;
+}
+
+.dropdown-item:last-child { /* Removes border from last item */
+    border-bottom: none;
+}
+
+/* Sandwich-themed styling */
+.bread-top {
+    padding: 26px;
+    background-color: #d4a373;
+	overflow: hidden;
+}
+
+/* Sesame seed effect */
+.bread-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#f5f5dc 10%, transparent 12%),
+                      radial-gradient(#f5f5dc 10%, transparent 12%);
+    background-size: 10px 10px;
+    background-position: 0 0, 5px 5px;
+    opacity: 0.7;
+}
+
+.ham {
+    padding: 20px;
+    background-color: #e59898;
+}
+
+.cheese {
+    background-color: #f9e181;
+}
+
+.lettuce {
+    padding: 8px;
+    background-color: #3bb03b;
+}
+
+.tomato {
+	padding: 15px;
+    background-color: tomato;
+}
+
+.bread-bottom {
+    padding: 26px;
+    background-color: #d4a373;
+}
