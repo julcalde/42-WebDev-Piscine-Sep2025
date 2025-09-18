@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Basic Calculator</title>
+		<style>
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				margin: 0;
+				font-family: Arial, sans-serif;
+			}
+			.calculator {
+				text-align: center;
+				padding: 20px;
+				border: 1px solid #ccc;
+				border-radius: 5px;
+			}
+			input, select, button {
+				margin: 10px;
+				padding: 5px;
+				font-size: 16px;
+			}
+			button {
+				cursor: pointer;
+				background-color: #4CAF50;
+				color: white;
+				border: none;
+				padding: 10px 20px;
+				border-radius: 5px;
+			}
+			button:hover {
+				background-color: #45a049;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="calculator">
+			<input type="text" id="inputA" placeholder="Enter first number">
+			<select id="operator">
+				<option value="+">+</option>
+				<option value="-">-</option>
+				<option value="*">*</option>
+				<option value="/">/</option>
+				<option value="%">%</option>
+			</select>
+			<input type="text" id="inputB" placeholder="Enter second number">
+			<br>
+			<button onclick="calculate()">Try me!</button>
+		</div>
+
+		<script>
+			// Function to validate if input is a positive integer
+			function isPositiveInteger(value) {
+				return /^\d+$/.test(value) && parseInt(value) >= 0;
+			}
+
+			// Function to perform calculation
+			function calculate() {
+				const inputA = document.getElementById('inputA').value;
+				const inputB = document.getElementById('inputB').value;
+				const operator = document.getElementById('operator').value;
+
+				// Validate inputs
+				if (!isPositiveInteger(inputA) || !isPositiveInteger(inputB)) {
+					alert('Error :(');
+					console.log('Error :(');
+					return;
+				}
+
+				const left = parseInt(inputA);
+				const right = parseInt(inputB);
+				let result;
+
+				// Check for division or modulo by zero
+				if ((operator === '/' || operator === '%') && right === 0) {
+					alert("It's over 9000!");
+					console.log("It's over 9000!");
+					return;
+				}
+
+				// Perform calculation based on operator
+				switch (operator) {
+					case '+':
+						result = left + right;
+						break;
+					case '-':
+						result = left - right;
+						break;
+					case '*':
+						result = left * right;
+						break;
+					case '/':
+						result = left / right;
+						break;
+					case '%':
+						result = left % right;
+						break;
+				}
+
+				// Display result in alert and console
+				alert(`Result: ${result}`);
+				console.log(`Result: ${result}`);
+			}
+
+			// Show alert every 30 seconds
+			setInterval(() => {
+				alert('Please, use me...');
+			}, 30000);
+		</script>
+	</body>
+</html>
