@@ -5,17 +5,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Balloon Game</title>
         <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-color: #8b8a85;
+                cursor: move; /*just for fun*/
+            }
             #balloon {
                 width: 200px;
                 height: 200px;
                 background-color: red;
+                border: 1px solid black;
                 border-radius: 50%;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                cursor: pointer;
-                transition: all 0.3s ease;
+                transition: all 0.05s ease; /*just for hardcore*/
+                cursor: cell; /*just for fun*/
             }
         </style>
     </head>
@@ -32,7 +38,7 @@
                     size += 10;
                     colorIndex = (colorIndex + 1) % colors.length;
                 } else {
-                    size = 200;
+                    size = 0; /*because life is hard*/
                     colorIndex = 0;
                 }
                 updateBalloon();
