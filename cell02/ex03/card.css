@@ -1,0 +1,85 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ab9c7c;
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    background-color: rgb(249, 212, 2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 8px 8px 15px rgb(82, 67, 28);
+    text-align: center;
+}
+
+h1 {
+    margin: 0 0 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+table {
+    border-collapse: collapse; /* Ensures no space between cells */
+    width: 100%; /* Full width of the card */
+	margin-bottom: 10px; /* Space below the table */
+}
+
+td {
+    padding: 0; /* No padding for table cells */
+}
+
+.profile-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.login {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.socials {
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.socials img {
+    width: 30px;
+    height: 30px;
+    border-radius: 25px;
+}
+.socials:hover {
+    transform: scale(1.2);
+    transition: transform 1s;
+}
+
+.contact-button {
+    background-color: rgb(196, 138, 2);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-button:hover {
+    background-color: goldenrod;
+}
