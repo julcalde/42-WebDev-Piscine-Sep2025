@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>It's over 9000 Calculator</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 400px;
+                margin: 50px auto;
+                padding: 20px;
+            }
+            input, select, button {
+                margin: 10px 0;
+                padding: 8px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="number" id="left" placeholder="Left number" min="0">
+        <select id="operator">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+            <option>%</option>
+        </select>
+        <input type="number" id="right" placeholder="Right number" min="0">
+        <button id="tryMe">Try me!</button>
+        <script>
+            $(document).ready(function() {
+                setInterval(function() {
+                    alert('Please, use me...');
+                }, 30000);
+
+                $('#tryMe').click(function() {
+                    const left = parseInt($('#left').val());
+                    const right = parseInt($('#right').val());
+                    const op = $('#operator').val();
+
+                    if (isNaN(left) || isNaN(right) || left < 0 || right < 0) {
+                        alert('Error :(');
+                        return;
+                    }
+
+                    let result;
+                    switch (op) {
+                        case '+': result = left + right; break;
+                        case '-': result = left - right; break;
+                        case '*': result = left * right; break;
+                        case '/':
+                            if (right === 0) {
+                                alert("It's over 9000!");
+                                console.log("It's over 9000!");
+                                return;
+                            }
+                            result = left / right; break;
+                        case '%':
+                            if (right === 0) {
+                                alert("It's over 9000!");
+                                console.log("It's over 9000!");
+                                return;
+                            }
+                            result = left % right; break;
+                    }
+
+                    alert(result);
+                    console.log(result);
+                });
+            });
+        </script>
+    </body>
+</html>
