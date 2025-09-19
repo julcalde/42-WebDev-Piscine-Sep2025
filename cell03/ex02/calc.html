@@ -10,27 +10,26 @@
 				align-items: center;
 				justify-content: center;
 				height: 100vh;
-				margin: 0;
+				margin: 0; /* Remove default margin, meaning the body takes full viewport height */
 				font-family: Arial, sans-serif;
 			}
 			.calculator {
 				text-align: center;
 				background-color: darkcyan;
-				padding: 10px;
+				padding: 10px; /* Add some padding for better appearance */
 				border: 2px solid #413f3f61;
 				border-radius: 5px;
 				box-shadow: 0px 4px 8px rgb(0, 71, 71);
 			}
-			input, select, button {
+			input, select, button { /* Style inputs, select, and button uniformly */
 				margin: 10px;
 				padding: 5px;
 				font-size: 16px;
 			}
-			select {
+			select { /* Style the dropdown cursor */
 				cursor: pointer;
-				position: relative;
 			}
-			button {
+			button { /* Style the button */
 				cursor: pointer;
 				background-color: darkblue;
 				box-shadow: 0px 4px 8px rgb(0, 71, 71);
@@ -39,7 +38,7 @@
 				padding: 10px 20px;
 				border-radius: 5px;
 			}
-			button:hover {
+			button:hover { /* Changes button style on hover*/
 				background-color: azure;
 				color: black;
 			}
